@@ -23,6 +23,8 @@ class ArrayAsXml
 
     private $rootName = 'root';
 
+    private $fileName = '';
+
     /**
      * Set XML Document Version.
      *
@@ -54,6 +56,16 @@ class ArrayAsXml
     }
 
     /**
+     * Set XML File Name.
+     *
+     * @param string
+     */
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+    }
+
+    /**
      * Main method to convert array to XML.
      *
      * @param array
@@ -67,7 +79,7 @@ class ArrayAsXml
             $this->convert($data, $xml);
         }
 
-        return $xml->asXML();
+        return preg_match("/^[A-Za-z0-9-\(\)]+$/", $this->fileName) ? $xml->asXML($this->fileName) : $xml->asXML();
     }
 
     /**

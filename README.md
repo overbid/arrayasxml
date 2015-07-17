@@ -25,9 +25,10 @@ use Overbid\ArrayAsXml;
 
 ```php
 $arrayAsXml = new ArrayAsXml();
-$arrayAsXml->setVersion('1.1');      //default 1.0
-$arrayAsXml->setEncoding('TIS-620'); //default UTF-8
-$arrayAsXml->setRootName('main');    //defaul root
+$arrayAsXml->setVersion('1.1');       //default 1.0
+$arrayAsXml->setEncoding('TIS-620');  //default UTF-8
+$arrayAsXml->setRootName('main');     //defaul root
+$arrayAsXml->setFileName('test.xml'); //default is not create file
 ```
 
 #### Creat XML
