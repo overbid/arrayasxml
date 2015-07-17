@@ -1,21 +1,18 @@
 {
-   "name":"overbid/arrayasxml",
-   "description":"Array -> XML Converter Class",
-   "keywords":[
-      "php",
-      "xml"
-   ],
-   "type":"library",
-   "homepage":"https://github.com/overbid/arrayasxml",
-   "license":"BSD-2-Clause",
-   "authors":[
-      {
-         "name":"Anton Vasylyev"
-      }
-   ],
-   "autoload":{
-      "psr-4":{
-         "Jeckerson\\":"/"
-      }
-   }
+    "name": "overbid/arrayasxml",
+    "type": "library",
+    "description": "Simple class, array as xml converter.",
+    "keywords": ["php", "xml"],
+    "homepage": "https://github.com/overbid/arrayasxml",
+    "license": "MIT",
+    "authors": [{
+        "name": "Eakkapat Pattarathamrong",
+        "homepage": "https://facebook.com/overbid",
+        "role": "Developer"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Overbid\\": "src"
+        }
+    }
 }
