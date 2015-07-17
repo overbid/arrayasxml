@@ -49,7 +49,7 @@ class Array2xml
             }
         }
 
-        $this->writer = new XMLWriter();
+        $this->writer = new \XMLWriter();
     }
 
     // --------------------------------------------------------------------
@@ -333,3 +333,4 @@ class Array2xml
     }
 }
 //END Array to Xml Class
+
