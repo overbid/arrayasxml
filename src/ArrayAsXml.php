@@ -17,23 +17,9 @@ namespace Overbid;
 
 class ArrayAsXml
 {
-    private $version = '1.0';
-
     private $encoding = 'UTF-8';
 
     private $rootName = 'root';
-
-    private $fileName = '';
-
-    /**
-     * Set XML Document Version.
-     *
-     * @param string
-     */
-    public function setVersion($version)
-    {
-        $this->version = (string) $version;
-    }
 
     /**
      * Set Encoding.
@@ -72,14 +58,14 @@ class ArrayAsXml
      *
      * @return string
      */
-    public function asXml($data = array())
+    public function save($data = array())
     {
-        $xml = new \SimpleXMLElement('<?xml version="'.$this->version.'" encoding="'.$this->encoding.'" ?><'.$this->rootName.'></'.$this->rootName.'>');
+        $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="'.$this->encoding.'" ?><'.$this->rootName.'></'.$this->rootName.'>');
         if ($data !== array() and is_array($data)) {
             $this->convert($data, $xml);
         }
 
-        return preg_match("/^[A-Za-z0-9-\(\)]+$/", $this->fileName) ? $xml->asXML($this->fileName) : $xml->asXML();
+        return html_entity_decode($xml->asXML(), ENT_NOQUOTES, $this->encoding);
     }
 
     /**
@@ -87,9 +73,9 @@ class ArrayAsXml
      *
      * @param array
      */
-    private function convert($array, &$xml)
+    private function convert($data, &$xml)
     {
-        foreach ($array as $key => $value) {
+        foreach ($data as $key => $value) {
             if (is_array($value)) {
                 if (!is_numeric($key)) {
                     $leaf = $xml->addChild("$key");
