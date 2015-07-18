@@ -10,7 +10,7 @@
  *
  * @link           https://github.com/overbid/arrayasxml
  *
- * @version        0.1
+ * @version        0.2
  */
 
 namespace Overbid;
