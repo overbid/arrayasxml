@@ -27,7 +27,7 @@ class Array2xml
 	private $numericElement = 'key';
 	private $skipNumeric = TRUE;
 	private $_tabulation = TRUE;            //TODO
-    private $defaultTagName = FALSE;    //Tag For Numeric Array Keys
+  private $defaultTagName = FALSE;    //Tag For Numeric Array Keys
 	private $rawKeys = array();
 
 	/**
@@ -51,7 +51,7 @@ class Array2xml
 			}
 		}
 
-		$this->writer = new XMLWriter();
+		$this->writer = new \XMLWriter();
 	}
 
 	// --------------------------------------------------------------------
